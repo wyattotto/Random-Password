@@ -9,7 +9,7 @@ var uppercaseAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numbers = "0123456789";
 var optionsVariable = "";
 
-
+//assets 
 
 
 function writePassword() {
