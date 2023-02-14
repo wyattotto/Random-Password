@@ -9,7 +9,7 @@ var uppercaseAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numbers = "0123456789";
 var optionsVariable = "";
 
-//assets 
+
 
 
 function writePassword() {
@@ -17,7 +17,7 @@ function writePassword() {
     // Clear previous password from screen
     password.value === "";
     var randomString = "";
-
+    
     // Chose password criteria
     // Okay for yes, cancel for no
     var passwordLength = prompt("Input a password length between 8 and 128 characters.");
@@ -70,7 +70,7 @@ generateBtn.addEventListener("click", writePassword);
 
 
 // stops page from refreshing
-event.stopPropagation()
+
 
 
 
