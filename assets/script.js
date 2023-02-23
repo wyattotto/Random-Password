@@ -4,8 +4,8 @@ var password = document.querySelector("#password");
 
 // Var for all Character sets
 var specialCharacters = " !#$%&'()*+,-./:;<=>?@^_`{|}~";
-var lowercaseletters = "abcdefghijklmnopqrstuvwxyz";
-var uppercaseletters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
+var uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numbers = "0123456789";
 var optionsVariable = "";
 
@@ -46,11 +46,11 @@ function RandomPassword() {
   }
 
     if (uppercase) {
-        optionsVariable += uppercaseAlphabet;
+        optionsVariable += uppercaseLetters;
     }
 
     if (lowercase) {
-      optionsVariable += lowercaseAlphabet;
+      optionsVariable += lowercaseLetters;
   }
 
     if (specialChar) {
