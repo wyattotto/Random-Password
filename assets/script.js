@@ -45,11 +45,11 @@ function RandomPassword() {
       optionsVariable += numbers;
   }
 
-    if (uppercase) {
+    if (upperCase) {
         optionsVariable += uppercaseLetters;
     }
 
-    if (lowercase) {
+    if (lowerCase) {
       optionsVariable += lowercaseLetters;
   }
 
