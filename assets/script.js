@@ -4,15 +4,15 @@ var password = document.querySelector("#password");
 
 // Var for all Character sets
 var specialCharacters = " !#$%&'()*+,-./:;<=>?@^_`{|}~";
-var lowercaseAlphabet = "abcdefghijklmnopqrstuvwxyz";
-var uppercaseAlphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var lowercaseletters = "abcdefghijklmnopqrstuvwxyz";
+var uppercaseletters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 var numbers = "0123456789";
 var optionsVariable = "";
 
 
 
 
-function writePassword() {
+function RandomPassword() {
 
     // Clear previous password from screen
     password.value === "";
@@ -22,8 +22,8 @@ function writePassword() {
     // Okay for yes, cancel for no
     var passwordLength = prompt("Input a password length between 8 and 128 characters.");
     var specialChar = confirm("Do you want your password to contain special characters? Okay for yes, Cancel for no.");
-    var lowercaseLett = confirm("Do you want your password to contain lowercase letters? Okay for yes, Cancel for no.");
-    var uppercaseLett = confirm("Do you want your password to contain uppercase letters? Okay for yes, Cancel for no.");
+    var lowerCase = confirm("Do you want your password to contain lowercase letters? Okay for yes, Cancel for no.");
+    var upperCase = confirm("Do you want your password to contain uppercase letters? Okay for yes, Cancel for no.");
     var num = confirm("Do you want your password to contain numbers? Okay for yes, Cancel for no.");
     
     //Statement for the prompt for password Length
@@ -32,10 +32,10 @@ function writePassword() {
         var passwordLength = prompt("Password must be between 8 and 128 characters.");
     }
 
-    else if (lowercaseLett === false && uppercaseLett === false && num === false && specialChar === false) {
+    else if (lowerCase === false && upperCase === false && num === false && specialChar === false) {
         alert("You must chose at least one password criteria.");
-        var lowercaseLett = confirm("Do you want your password to contain lowercase letters?");
-        var uppercaseLett = confirm("Do you want your password to contain uppercase letters?");
+        var lowerCase = confirm("Do you want your password to contain lowercase letters?");
+        var upperCase = confirm("Do you want your password to contain uppercase letters?");
         var num = confirm("Do you want your password to contain numbers?");
         var specialChar = confirm("Do you want your password to contain special characters?");
     }
@@ -45,11 +45,11 @@ function writePassword() {
       optionsVariable += numbers;
   }
 
-    if (uppercaseLett) {
+    if (uppercase) {
         optionsVariable += uppercaseAlphabet;
     }
 
-    if (lowercaseLett) {
+    if (lowercase) {
       optionsVariable += lowercaseAlphabet;
   }
 
@@ -65,14 +65,14 @@ function writePassword() {
     password.value = randomString;
 
 }
-// Event listener waiting for Generate password to be clicked 
+
 generateBtn.addEventListener("click", writePassword);
 
 
-// stops page from refreshing
+
 
 
 
 
 // calling of the Function 
-writePassword()
+RandomPassword()
