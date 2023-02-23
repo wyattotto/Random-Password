@@ -16,7 +16,7 @@ function RandomPassword() {
 
     // Clear previous password from screen
     password.value === "";
-    var randomString = "";
+    var RandomPasswordString = "";
     
     // Chose password criteria
     // Okay for yes, cancel for no
@@ -60,16 +60,13 @@ function RandomPassword() {
   
     for (var i = 0; i < passwordLength; i++) {
         // Continues to select a random character value from the string until it is the desired length
-        randomString += optionsVariable.charAt(Math.floor(Math.random() * optionsVariable.length));
+        RandomPasswordString += optionsVariable.charAt(Math.floor(Math.random() * optionsVariable.length));
     }
-    password.value = randomString;
+    password.value = RandomPasswordString;
 
 }
 
-generateBtn.addEventListener("click", writePassword);
-
-
-
+generateBtn.addEventListener("click", writePassword)
 
 
 
