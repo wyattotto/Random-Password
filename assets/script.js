@@ -2,11 +2,11 @@
 var generateBtn = document.querySelector("#generate");
 var password = document.querySelector("#password");
 
-// Var for all Character sets
-var specialChar = " !#$%&'()*+,-./:;<=>?@^_`{|}~";
-var lowerCase = "abcdefghijklmnopqrstuvwxyz";
-var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var num = "0123456789";
+
+var specialChar1 = " !#$%&'()*+,-./:;<=>?@^_`{|}~";
+var lowerCase1 = "abcdefghijklmnopqrstuvwxyz";
+var upperCase1 = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var num1 = "0123456789";
 var optionsVariable = "";
 
 
@@ -33,32 +33,34 @@ function RandomPassword() {
     }
 
     // if statements for the selection of what variables to be included in password
-    if (num ==="yes") {
-      optionsVariable += num;
-  } else if (num === "no"){
-    optionsVariable += !num
+    
+
+    if (num ===  "yes") {
+      optionsVariable += num1;
+  } else if (num === "no"  ){
+    optionsVariable = optionsVariable
   }
 
-    if (upperCase ==="yes") {
-        optionsVariable += upperCase;
+    if (upperCase === "yes") {
+        optionsVariable += upperCase1;
     } else if (upperCase === "no"){
-        optionsVariable += !upperCase
+        optionsVariable = optionsVariable
     }
 
-    if (lowerCase ==="yes") {
-      optionsVariable += lowerCase;
+    if (lowerCase === "yes") {
+      optionsVariable += lowerCase1;
   }else if (lowerCase === "no"){
-    optionsVariable += !lowerCase
+    optionsVariable = optionsVariable
   }
 
     if (specialChar ==='yes') {
-        optionsVariable += specialChar;
+        optionsVariable += specialChar1
 
     }else if (specialChar === "no")
     {
-        optionsVariable += !specialChar
+        optionsVariable = optionsVariable
     }
-
+    
     else if (lowerCase === 'no' && upperCase === "no" && num === "no" && specialChar === "no") {
         alert("You must chose at least one password criteria.");
         var lowerCase = Prompt("Do you want your password to contain lowercase letters? yes / no");
@@ -74,9 +76,9 @@ function RandomPassword() {
     }
     password.value = RandomPasswordString;
 
-}
+    }
 
-generateBtn.addEventListener("click", RandomPassword)
+generateBtn.addEventListener("click", RandomPassword , )
 
 
 
