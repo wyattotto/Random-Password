@@ -3,10 +3,10 @@ var generateBtn = document.querySelector("#generate");
 var password = document.querySelector("#password");
 
 // Var for all Character sets
-var specialCharacters = " !#$%&'()*+,-./:;<=>?@^_`{|}~";
-var lowercaseLetters = "abcdefghijklmnopqrstuvwxyz";
-var uppercaseLetters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-var numbers = "0123456789";
+var specialChar = " !#$%&'()*+,-./:;<=>?@^_`{|}~";
+var lowerCase = "abcdefghijklmnopqrstuvwxyz";
+var upperCase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+var num = "0123456789";
 var optionsVariable = "";
 
 
@@ -19,12 +19,12 @@ function RandomPassword() {
     var RandomPasswordString = "";
     
     // Chose password criteria
-    // Okay for yes, cancel for no
+    
     var passwordLength = prompt("Input a password length between 8 and 128 characters.");
-    var specialChar = confirm("Do you want your password to contain special characters? Okay for yes, Cancel for no.");
-    var lowerCase = confirm("Do you want your password to contain lowercase letters? Okay for yes, Cancel for no.");
-    var upperCase = confirm("Do you want your password to contain uppercase letters? Okay for yes, Cancel for no.");
-    var num = confirm("Do you want your password to contain numbers? Okay for yes, Cancel for no.");
+    var specialChar = prompt("Do you want your password to contain special characters? yes / no ");
+    var lowerCase = prompt("Do you want your password to contain lowercase letters?  yes / no ");
+    var upperCase = prompt("Do you want your password to contain uppercase letters?  yes / no ");
+    var num = prompt("Do you want your password to contain numbers?  yes / no");
     
     //Statement for the prompt for password Length
     if (passwordLength < 8 || passwordLength > 128) {
@@ -32,29 +32,39 @@ function RandomPassword() {
         var passwordLength = prompt("Password must be between 8 and 128 characters.");
     }
 
-    else if (lowerCase === false && upperCase === false && num === false && specialChar === false) {
-        alert("You must chose at least one password criteria.");
-        var lowerCase = confirm("Do you want your password to contain lowercase letters?");
-        var upperCase = confirm("Do you want your password to contain uppercase letters?");
-        var num = confirm("Do you want your password to contain numbers?");
-        var specialChar = confirm("Do you want your password to contain special characters?");
-    }
-
     // if statements for the selection of what variables to be included in password
-    if (num) {
-      optionsVariable += numbers;
+    if (num ==="yes") {
+      optionsVariable += num;
+  } else if (num === "no"){
+    optionsVariable += !num
   }
 
-    if (upperCase) {
-        optionsVariable += uppercaseLetters;
+    if (upperCase ==="yes") {
+        optionsVariable += upperCase;
+    } else if (upperCase === "no"){
+        optionsVariable += !upperCase
     }
 
-    if (lowerCase) {
-      optionsVariable += lowercaseLetters;
+    if (lowerCase ==="yes") {
+      optionsVariable += lowerCase;
+  }else if (lowerCase === "no"){
+    optionsVariable += !lowerCase
   }
 
-    if (specialChar) {
-        optionsVariable += specialCharacters;
+    if (specialChar ==='yes') {
+        optionsVariable += specialChar;
+
+    }else if (specialChar === "no")
+    {
+        optionsVariable += !specialChar
+    }
+
+    else if (lowerCase === 'no' && upperCase === "no" && num === "no" && specialChar === "no") {
+        alert("You must chose at least one password criteria.");
+        var lowerCase = Prompt("Do you want your password to contain lowercase letters? yes / no");
+        var upperCase = prompt("Do you want your password to contain uppercase letters? yes / no");
+        var num = prompt("Do you want your password to contain numbers? yes / no");
+        var specialChar = prompt("Do you want your password to contain special characters? yes / no");
     }
 
   
@@ -66,7 +76,7 @@ function RandomPassword() {
 
 }
 
-generateBtn.addEventListener("click", writePassword)
+generateBtn.addEventListener("click", RandomPassword)
 
 
 
